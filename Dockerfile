@@ -31,3 +31,5 @@ ENV INSTALL_BASE_LIB ${INSTALL_BASE_LIB}
 RUN if [ ${INSTALL_BASE_LIB} = true ]; then \
   apt-get install --assume-yes apt-utils -y libbz2-dev libexpat1-dev libghc-gnutls-dev libsecret-1-dev libgconf2-4 libdb-dev libgmp3-dev zlib1g-dev linux-libc-dev libcurl4-gnutls-dev libgudev-1.0-dev uuid-dev libpng-dev libjpeg-dev libfreetype6-dev libssh-dev libssh2-1-dev libpcre3-dev libpcre++-dev libmhash-dev libmcrypt-dev libltdl7-dev libiconv-hook-dev libsqlite-dev libgettextpo0 libwrap0-dev libreadline-dev \
   ;fi
+
+RUN apt-get autoremove && apt-get autoclean && apt-get clean
